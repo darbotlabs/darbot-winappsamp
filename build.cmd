@@ -20,8 +20,8 @@ if not exist ".\.nuget\nuget.exe" powershell -Command "Invoke-WebRequest https:/
 set NUGET_RESTORE_MSBUILD_ARGS=/p:PublishReadyToRun=true
 
 for /f "delims=" %%D in ('dir /s/b samples\%sample_filter%*.sln') do (
-    call .nuget\nuget.exe restore "%%D" -configfile Samples\nuget.config -PackagesDirectory %~dp0packages
-    call msbuild /warnaserror /p:platform=%platform% /p:configuration=%configuration% /p:NugetPackageDirectory=%~dp0packages /bl:"%%~nD.binlog" "%%D"
+    call .nuget\nuget.exe restore "%%D" -configfile Samples\nuget.config -PackagesDirectory %~dp0darbot\offline-dependencies
+    call msbuild /warnaserror /p:platform=%platform% /p:configuration=%configuration% /p:NugetPackageDirectory=%~dp0darbot\offline-dependencies /bl:"%%~nD.binlog" "%%D"
 
     if ERRORLEVEL 1 goto :eof
 )
