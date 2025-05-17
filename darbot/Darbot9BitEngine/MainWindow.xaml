@@ -1,0 +1,9 @@
+<Window
+    x:Class="Darbot9BitEngine.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Darbot 9bit">
+    <Grid>
+        <TextBlock Text="Welcome to Darbot 9bit Engine" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Grid>
+</Window>
